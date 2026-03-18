@@ -14,8 +14,9 @@
             }
             p
             {
-                transition: transform 1s ease-in-out;
-                transform: rotate(45deg);
+                background:black;
+                transition: transform .4s ease-in-out;
+                transform: rotate(0deg);
                 font-family: "Asimovian", sans-serif;
                 color: #00ff00;
                 font-size:450px;
@@ -35,14 +36,15 @@
 
                 color:#0000ff;
                 cursor:grabbing;
-            }
+            }div{background:black; height:100vh; width:300vh;}
         </style>
     </head>
     <body>
+        <div></div>
         <p>67</p>
     </body>
     <script>
-         // Keep your sleep function as is
+       // Keep your sleep function as is
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -67,7 +69,8 @@ p.addEventListener("mouseenter", async (event) => {
 
 p.addEventListener("mouseleave", (event) => {
     true2=false;
-    p.style.transform = "rotate(0deg)";
+    p.style.transform = "rotate(0)";
 });
+        
     </script>
 </html>
