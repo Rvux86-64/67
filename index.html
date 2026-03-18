@@ -42,26 +42,32 @@
         <p>67</p>
     </body>
     <script>
-       // Keep your sleep function as is
+         // Keep your sleep function as is
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 const p = document.querySelector('p');
-
+var true2=true;
 // 1. Add 'async' here
-p.addEventListener("mouseover", async (event) => {
-    p.style.transform = "rotate(315deg)";
-    await sleep(1000);
-    // 2. Add 'await' here
-    
+p.addEventListener("mouseenter", async (event) => {
+    true2=true;
+    while(true2)
+    {
     p.style.transform = "rotate(45deg)";
+    await sleep(400);
+    // 2. Add 'await' here
+    p.style.transform = "rotate(0deg)";
+    p.style.transform = "rotate(-45deg)";
+    await sleep(400);
+    p.style.transform ="rotate(0deg)";
+    }
 
 });
 
-p.addEventListener("mouseup", (event) => {
-    p.style.transform = "rotate(0)";
+p.addEventListener("mouseleave", (event) => {
+    true2=false;
+    p.style.transform = "rotate(0deg)";
 });
-        
     </script>
 </html>
