@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="en">
+    <head><title>67!</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
+   
+
+            body
+            {
+                background-color:#000;
+                display:flex;
+                justify-content:center;
+                align-items: center;
+            }
+            p
+            {
+                transition: transform 1s ease-in-out;
+                transform: rotate(45deg);
+                font-family: "Asimovian", sans-serif;
+                color: #00ff00;
+                font-size:450px;
+                position:absolute;
+                height:100vh;
+                width:100vh;
+                display:flex;
+                justify-content:center;
+                align-items: center;
+                margin:0px;
+                padding:0px;
+                top:0;bottom:0;left:350px;right:0;
+            }
+            p:hover
+            {
+                                transform: rotate(0);
+
+                color:#0000ff;
+                cursor:grabbing;
+            }
+        </style>
+    </head>
+    <body>
+        <p>67</p>
+    </body>
+    <script>
+       // Keep your sleep function as is
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const p = document.querySelector('p');
+
+// 1. Add 'async' here
+p.addEventListener("mouseover", async (event) => {
+    p.style.transform = "rotate(315deg)";
+    await sleep(1000);
+    // 2. Add 'await' here
+    
+    p.style.transform = "rotate(45deg)";
+
+});
+
+p.addEventListener("mouseup", (event) => {
+    p.style.transform = "rotate(0)";
+});
+        
+    </script>
+</html>
